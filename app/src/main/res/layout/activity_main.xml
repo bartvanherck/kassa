@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="be.bartvanherck.kassa.MainActivity">
+
+    <Button
+        android:id="@+id/upGrijs"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:onClick="actionUpGrijs"
+        android:text="+ 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/geel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/downGrijs"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="0dp"
+        android:onClick="actionDownGrijs"
+        android:text="- 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/geel"
+        app:layout_constraintTop_toBottomOf="@+id/upGrijs" />
+
+    <ImageButton
+        android:id="@+id/grijs"
+        android:layout_width="206dp"
+        android:layout_height="200dp"
+        android:background="@android:color/darker_gray"
+        app:srcCompat="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/upGrijs"
+        android:layout_marginLeft="16dp" />
+
+    <Button
+        android:id="@+id/UpGroen"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:onClick="actionUpGroen"
+        android:text="+ 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/upGeel"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:onClick="actionUpGeel"
+        android:text="+ 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/groen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/downGeel"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="0dp"
+        android:onClick="actionDownGeel"
+        android:text="- 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/groen"
+        app:layout_constraintTop_toBottomOf="@+id/upGeel" />
+
+    <ImageButton
+        android:id="@+id/groen"
+        android:layout_width="206dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_green_dark"
+        app:layout_constraintLeft_toRightOf="@+id/UpGroen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <Button
+        android:id="@+id/downGroen"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="0dp"
+        android:onClick="actionDownGroen"
+        android:text="- 1"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UpGroen" />
+
+
+    <ImageButton
+        android:id="@+id/geel"
+        android:layout_width="206dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_orange_light"
+        app:layout_constraintLeft_toRightOf="@+id/upGeel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/holo_orange_light" />
+
+    <TextView
+        android:id="@+id/txtGeel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/geel"
+        app:layout_constraintLeft_toLeftOf="@+id/geel"
+        app:layout_constraintRight_toRightOf="@+id/geel"
+        app:layout_constraintTop_toTopOf="@+id/geel" />
+
+    <TextView
+        android:id="@+id/txtGrijs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/grijs"
+        app:layout_constraintLeft_toLeftOf="@+id/grijs"
+        app:layout_constraintRight_toRightOf="@+id/grijs"
+        app:layout_constraintTop_toTopOf="@+id/grijs"
+        />
+
+    <TextView
+        android:id="@+id/txtGroen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/groen"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/groen"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="@+id/groen"
+        app:layout_constraintBottom_toBottomOf="@+id/groen"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/txtResultaat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="122 EURO 99 CENT"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groen" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="actionVolgende"
+        android:text="Volgende"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 package be.bartvanherck.kassa;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,10 @@ public class MainActivity extends AppCompatActivity {
     public static Integer numberGroen = 0;
     public static Integer numberGeel = 0;
     public static Integer numberGrijs = 0;
+
+    public static final String PREFS_NAME = "BE.BARTVANHERCK.KASSA.GROENMULEURO";
+    static final int SETTINGS_SAVED = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setResultaat(){
-        Integer groenMulEuro = 140;
-        Integer geelMulEuro = 160;
-        Integer grijsMulEuro = 220;
+        Integer groenMulEuro = getMulGroen();
+        Integer geelMulEuro = getMulGeel();
+        Integer grijsMulEuro = getMulGrijs();
 
         Integer resultGroen = groenMulEuro * numberGroen;
         Integer resultGeel = geelMulEuro * numberGeel;
@@ -114,5 +120,25 @@ public class MainActivity extends AppCompatActivity {
             resultaat = resultaat + " " + cents.toString();
         }
         txtResultaat.setText(resultaat);
+    }
+
+    public void actionGotoSettings(View view){
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    public Integer getMulGroen(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGroen", 0);
+    }
+
+    public Integer getMulGeel(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGeel", 0);
+    }
+
+    public Integer getMulGrijs(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGrijs", 0);
     }
 }

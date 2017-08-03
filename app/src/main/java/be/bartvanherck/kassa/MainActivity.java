@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String PREFS_NAME = "BE.BARTVANHERCK.KASSA.GROENMULEURO";
     static final int SETTINGS_SAVED = 1;
+    static final String EURO = "\u20ac";
 
 
     @Override
@@ -21,6 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         updateAllTextFields();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.settings){
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void actionUpGroen(View view) {
@@ -115,16 +135,11 @@ public class MainActivity extends AppCompatActivity {
     public void setTextResultaat(Integer euros, Integer cents){
         TextView txtResultaat = (TextView) findViewById(R.id.txtResultaat);
         String resultaat;
-        resultaat = euros.toString() + " Euro";
+        resultaat = euros.toString() + " " + EURO;
         if (cents != 0) {
             resultaat = resultaat + " " + cents.toString();
         }
         txtResultaat.setText(resultaat);
-    }
-
-    public void actionGotoSettings(View view){
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
     }
 
     public Integer getMulGroen(){

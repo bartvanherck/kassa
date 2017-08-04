@@ -1,7 +1,12 @@
 package be.bartvanherck.kassa;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,11 +15,32 @@ public class MainActivity extends AppCompatActivity {
     public static Integer numberGeel = 0;
     public static Integer numberGrijs = 0;
 
+    public static final String PREFS_NAME = "BE.BARTVANHERCK.KASSA.GROENMULEURO";
+    static final int SETTINGS_SAVED = 1;
+    static final String EURO = "\u20ac";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         updateAllTextFields();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.settings){
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void actionUpGroen(View view) {
@@ -76,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setResultaat(){
-        Integer groenMulEuro = 140;
-        Integer geelMulEuro = 160;
-        Integer grijsMulEuro = 220;
+        Integer groenMulEuro = getMulGroen();
+        Integer geelMulEuro = getMulGeel();
+        Integer grijsMulEuro = getMulGrijs();
 
         Integer resultGroen = groenMulEuro * numberGroen;
         Integer resultGeel = geelMulEuro * numberGeel;
@@ -109,10 +135,25 @@ public class MainActivity extends AppCompatActivity {
     public void setTextResultaat(Integer euros, Integer cents){
         TextView txtResultaat = (TextView) findViewById(R.id.txtResultaat);
         String resultaat;
-        resultaat = euros.toString() + " Euro";
+        resultaat = euros.toString() + " " + EURO;
         if (cents != 0) {
             resultaat = resultaat + " " + cents.toString();
         }
         txtResultaat.setText(resultaat);
+    }
+
+    public Integer getMulGroen(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGroen", 0);
+    }
+
+    public Integer getMulGeel(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGeel", 0);
+    }
+
+    public Integer getMulGrijs(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        return settings.getInt("prijsGrijs", 0);
     }
 }

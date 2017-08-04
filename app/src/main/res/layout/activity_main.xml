@@ -15,24 +15,25 @@
         android:onClick="actionUpGrijs"
         android:text="+ 1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/geel"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="32dp" />
 
     <Button
         android:id="@+id/downGrijs"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
         android:onClick="actionDownGrijs"
         android:text="- 1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/geel"
-        app:layout_constraintTop_toBottomOf="@+id/upGrijs" />
+        app:layout_constraintTop_toBottomOf="@+id/upGrijs"
+        android:layout_marginStart="32dp" />
 
     <ImageButton
         android:id="@+id/grijs"
@@ -43,7 +44,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         app:layout_constraintLeft_toRightOf="@+id/upGrijs"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
 
     <Button
         android:id="@+id/UpGroen"
@@ -54,10 +56,11 @@
         android:onClick="actionUpGroen"
         android:text="+ 1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="32dp" />
 
     <Button
         android:id="@+id/upGeel"
@@ -71,21 +74,22 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/groen"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="32dp" />
 
     <Button
         android:id="@+id/downGeel"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
         android:onClick="actionDownGeel"
         android:text="- 1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/groen"
-        app:layout_constraintTop_toBottomOf="@+id/upGeel" />
+        app:layout_constraintTop_toBottomOf="@+id/upGeel"
+        android:layout_marginStart="32dp" />
 
     <ImageButton
         android:id="@+id/groen"
@@ -96,21 +100,22 @@
         android:background="@android:color/holo_green_dark"
         app:layout_constraintLeft_toRightOf="@+id/UpGroen"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_green_dark" />
+        app:srcCompat="@android:color/holo_green_dark"
+        android:layout_marginStart="16dp" />
 
     <Button
         android:id="@+id/downGroen"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
         android:onClick="actionDownGroen"
         android:text="- 1"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpGroen" />
+        app:layout_constraintTop_toBottomOf="@+id/UpGroen"
+        android:layout_marginStart="32dp" />
 
 
     <ImageButton
@@ -122,7 +127,8 @@
         android:background="@android:color/holo_orange_light"
         app:layout_constraintLeft_toRightOf="@+id/upGeel"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_orange_light" />
+        app:srcCompat="@android:color/holo_orange_light"
+        android:layout_marginStart="16dp" />
 
     <TextView
         android:id="@+id/txtGeel"
@@ -134,12 +140,14 @@
         android:layout_marginTop="16dp"
         android:text="0"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="75sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/geel"
         app:layout_constraintLeft_toLeftOf="@+id/geel"
         app:layout_constraintRight_toRightOf="@+id/geel"
-        app:layout_constraintTop_toTopOf="@+id/geel" />
+        app:layout_constraintTop_toTopOf="@+id/geel"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <TextView
         android:id="@+id/txtGrijs"
@@ -151,13 +159,14 @@
         android:layout_marginTop="16dp"
         android:text="0"
         android:textAllCaps="true"
-        android:textSize="36sp"
+        android:textSize="75sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/grijs"
         app:layout_constraintLeft_toLeftOf="@+id/grijs"
         app:layout_constraintRight_toRightOf="@+id/grijs"
         app:layout_constraintTop_toTopOf="@+id/grijs"
-        />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <TextView
         android:id="@+id/txtGroen"
@@ -165,7 +174,7 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textAllCaps="true"
-        android:textSize="36sp"
+        android:textSize="75sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="@+id/groen"
         android:layout_marginTop="16dp"
@@ -174,29 +183,33 @@
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="@+id/groen"
         app:layout_constraintBottom_toBottomOf="@+id/groen"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <TextView
         android:id="@+id/txtResultaat"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:text="122 EURO 99 CENT"
+        android:text="0 €"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textSize="36sp"
+        android:textSize="100sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groen" />
+        app:layout_constraintTop_toBottomOf="@+id/groen"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
@@ -204,10 +217,14 @@
         android:onClick="actionVolgende"
         android:text="Volgende"
         android:textAlignment="center"
-        android:textSize="36sp"
+        android:textSize="100sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>

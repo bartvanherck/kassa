@@ -118,17 +118,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setTextGroen(){
-        TextView txtNumber = (TextView) findViewById(R.id.txtGroen);
+        TextView txtNumber = (TextView) findViewById(R.id.groen);
         txtNumber.setText(numberGroen.toString());
     }
 
     public void setTextGeel(){
-        TextView txtNumber = (TextView) findViewById(R.id.txtGeel);
+        TextView txtNumber = (TextView) findViewById(R.id.geel);
         txtNumber.setText(numberGeel.toString());
     }
 
     public void setTextGrijs(){
-        TextView txtNumber = (TextView) findViewById(R.id.txtGrijs);
+        TextView txtNumber = (TextView) findViewById(R.id.grijs);
         txtNumber.setText(numberGrijs.toString());
     }
 

@@ -3,4 +3,8 @@
         android:id="@+id/prijssettings"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="Prijzen" />
+    <item
+        android:id="@+id/colorsettings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Kleuren" />
 </menu>

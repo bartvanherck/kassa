@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (item.getItemId() == R.id.colorsettings){
+            Intent intent = new Intent(this, ColorSettings.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -96,11 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateAllTextFields()
     {
-        /*
-        updateColorLeft();
-        updateColorMiddle();
-        updateColorRight();
-        */
         setTextLeft();
         setTextMiddle();
         setTextRight();

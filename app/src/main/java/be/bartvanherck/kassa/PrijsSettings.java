@@ -3,6 +3,7 @@ package be.bartvanherck.kassa;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 
@@ -26,18 +27,6 @@ public class PrijsSettings extends AppCompatActivity {
         setTextLeft();
         setTextMiddle();
         setTextRight();
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-
-        SharedPreferences settings = getSharedPreferences(MainActivity.PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("prijsLeft", getNumberLeft());
-        editor.putInt("prijsMiddle", getNumberMiddle());
-        editor.putInt("prijsRight", getNumberRight());
-        editor.commit();
     }
 
     public void setTextLeft(){
@@ -81,4 +70,17 @@ public class PrijsSettings extends AppCompatActivity {
         }
         return Integer.parseInt(prijs);
     }
+
+    public void actionPriceSettingsBack(View view) {
+        SharedPreferences settings = getSharedPreferences(MainActivity.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("prijsLeft", getNumberLeft());
+        editor.putInt("prijsMiddle", getNumberMiddle());
+        editor.putInt("prijsRight", getNumberRight());
+        editor.commit();
+
+        setResult(RESULT_OK);
+        finish();
+    }
+
 }

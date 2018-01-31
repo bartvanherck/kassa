@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public static Integer numberRight = 0;
 
     public static final String PREFS_NAME = "BE.BARTVANHERCK.KASSA.GROENMULEURO";
-    static final int SETTINGS_SAVED = 1;
+    public static final Integer PICK_COLOR_SETTINGS = 1;
+    public static final Integer PICK_PRICE_SETTINGS = 2;
     static final String EURO = "\u20ac";
 
 
@@ -26,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         updateAllTextFields();
     }
 
@@ -38,15 +44,29 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.prijssettings){
             Intent intent = new Intent(this, PrijsSettings.class);
-            startActivity(intent);
+            //startActivity(intent);
+            startActivityForResult(intent, PICK_PRICE_SETTINGS);
             return true;
         }
         if (item.getItemId() == R.id.colorsettings){
-            Intent intent = new Intent(this, ColorSettings.class);
-            startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, ColorSettings.class);
+            // startActivity(intent);
+            startActivityForResult(intent, PICK_COLOR_SETTINGS);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_COLOR_SETTINGS) {
+            updateAllTextFields();
+        }
+        if (requestCode == PICK_PRICE_SETTINGS) {
+            updateAllTextFields();
+        }
     }
 
     public void actionUpLeft(View view) {
@@ -101,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateAllTextFields()
     {
+        updateColors();
         setTextLeft();
         setTextMiddle();
         setTextRight();
@@ -122,11 +143,6 @@ public class MainActivity extends AppCompatActivity {
     public void setTextLeft(){
         TextView txtNumber = (TextView) findViewById(R.id.txtLeft);
         txtNumber.setText(numberLeft.toString());
-
-        LinearLayout left_layout = (LinearLayout) findViewById(R.id.layout_left_result);
-        if (numberLeft > 5) {
-            left_layout.setBackgroundColor(Color.rgb(255, 0, 0));
-        }
     }
 
     public void setTextMiddle(){
@@ -162,5 +178,38 @@ public class MainActivity extends AppCompatActivity {
     public Integer getMulRight(){
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         return settings.getInt("prijsRight", 0);
+    }
+
+    public void updateColors(){
+        updateColorLeft();
+        updateColorMiddle();
+        updateColorRight();
+    }
+
+    public void updateColorLeft(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        Integer r = settings.getInt("colorLeft_Red", 0);
+        Integer g = settings.getInt("colorLeft_Green", 150);
+        Integer b = settings.getInt("colorLeft_Blue", 0);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout_left_result);
+        layout.setBackgroundColor(Color.rgb(r, g, b));
+    }
+
+    public void updateColorMiddle(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        Integer r = settings.getInt("colorMiddle_Red", 255);
+        Integer g = settings.getInt("colorMiddle_Green", 215);
+        Integer b = settings.getInt("colorMiddle_Blue", 0);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout_middle_result);
+        layout.setBackgroundColor(Color.rgb(r, g, b));
+    }
+
+    public void updateColorRight(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        Integer r = settings.getInt("colorRight_Red", 190);
+        Integer g = settings.getInt("colorRight_Green", 190);
+        Integer b = settings.getInt("colorRight_Blue", 190);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout_right_result);
+        layout.setBackgroundColor(Color.rgb(r, g, b));
     }
 }

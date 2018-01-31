@@ -8,12 +8,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
-    public static Integer numberGroen = 0;
-    public static Integer numberGeel = 0;
-    public static Integer numberGrijs = 0;
+    public static Integer numberLeft = 0;
+    public static Integer numberMiddle = 0;
+    public static Integer numberRight = 0;
 
     public static final String PREFS_NAME = "BE.BARTVANHERCK.KASSA.GROENMULEURO";
     static final int SETTINGS_SAVED = 1;
@@ -28,108 +30,113 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.settings){
-            Intent intent = new Intent(this, Settings.class);
+        if (item.getItemId() == R.id.prijssettings){
+            Intent intent = new Intent(this, PrijsSettings.class);
             startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void actionUpGroen(View view) {
-        numberGroen = numberGroen + 1;
+    public void actionUpLeft(View view) {
+        numberLeft = numberLeft + 1;
         updateAllTextFields();
     }
 
-    public void actionDownGroen(View view)
+    public void actionDownLeft(View view)
     {
-        numberGroen = numberGroen - 1;
-        if (numberGroen < 0 ) {
-            numberGroen = 0;
+        numberLeft = numberLeft - 1;
+        if (numberLeft < 0 ) {
+            numberLeft = 0;
         }
         updateAllTextFields();
     }
 
-    public void actionUpGeel(View view) {
-        numberGeel = numberGeel + 1;
+    public void actionUpMiddle(View view) {
+        numberMiddle = numberMiddle + 1;
         updateAllTextFields();
     }
 
-    public void actionDownGeel(View view)
+    public void actionDownMiddle(View view)
     {
-        numberGeel = numberGeel - 1;
-        if (numberGeel < 0){
-            numberGeel = 0;
+        numberMiddle = numberMiddle - 1;
+        if (numberMiddle < 0){
+            numberMiddle = 0;
         }
         updateAllTextFields();
     }
 
-    public void actionUpGrijs(View view) {
-        numberGrijs = numberGrijs + 1;
+    public void actionUpRight(View view) {
+        numberRight = numberRight + 1;
         updateAllTextFields();
     }
 
-    public void actionDownGrijs(View view)
+    public void actionDownRight(View view)
     {
-        numberGrijs = numberGrijs - 1;
-        if (numberGrijs < 0){
-            numberGrijs = 0;
+        numberRight = numberRight - 1;
+        if (numberRight < 0){
+            numberRight = 0;
         }
         updateAllTextFields();
     }
 
     public void actionVolgende(View view)
     {
-        numberGroen = 0;
-        numberGeel = 0;
-        numberGrijs = 0;
+        numberLeft = 0;
+        numberMiddle = 0;
+        numberRight = 0;
         updateAllTextFields();
     }
 
     public void updateAllTextFields()
     {
-        setTextGroen();
-        setTextGeel();
-        setTextGrijs();
+        /*
+        updateColorLeft();
+        updateColorMiddle();
+        updateColorRight();
+        */
+        setTextLeft();
+        setTextMiddle();
+        setTextRight();
         setResultaat();
     }
 
     public void setResultaat(){
-        Integer groenMulEuro = getMulGroen();
-        Integer geelMulEuro = getMulGeel();
-        Integer grijsMulEuro = getMulGrijs();
+        Integer resultLeft = getMulLeft() * numberLeft;
+        Integer resultMiddle = getMulMiddle() * numberMiddle;
+        Integer resultRight = getMulRight() * numberRight;
 
-        Integer resultGroen = groenMulEuro * numberGroen;
-        Integer resultGeel = geelMulEuro * numberGeel;
-        Integer resultGrijs = grijsMulEuro * numberGrijs;
-
-        Integer calculated = resultGroen + resultGeel + resultGrijs;
+        Integer calculated = resultLeft + resultMiddle + resultRight;
         Integer cents = calculated % 100;
         Integer euros = calculated / 100;
 
         setTextResultaat(euros, cents);
     }
 
-    public void setTextGroen(){
-        TextView txtNumber = (TextView) findViewById(R.id.groen);
-        txtNumber.setText(numberGroen.toString());
+    public void setTextLeft(){
+        TextView txtNumber = (TextView) findViewById(R.id.txtLeft);
+        txtNumber.setText(numberLeft.toString());
+
+        LinearLayout left_layout = (LinearLayout) findViewById(R.id.layout_left_result);
+        if (numberLeft > 5) {
+            left_layout.setBackgroundColor(Color.rgb(255, 0, 0));
+        }
     }
 
-    public void setTextGeel(){
-        TextView txtNumber = (TextView) findViewById(R.id.geel);
-        txtNumber.setText(numberGeel.toString());
+    public void setTextMiddle(){
+        TextView txtNumber = (TextView) findViewById(R.id.txtMiddle);
+        txtNumber.setText(numberMiddle.toString());
     }
 
-    public void setTextGrijs(){
-        TextView txtNumber = (TextView) findViewById(R.id.grijs);
-        txtNumber.setText(numberGrijs.toString());
+    public void setTextRight(){
+        TextView txtNumber = (TextView) findViewById(R.id.txtRight);
+        txtNumber.setText(numberRight.toString());
     }
 
     public void setTextResultaat(Integer euros, Integer cents){
@@ -142,18 +149,18 @@ public class MainActivity extends AppCompatActivity {
         txtResultaat.setText(resultaat);
     }
 
-    public Integer getMulGroen(){
+    public Integer getMulLeft(){
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        return settings.getInt("prijsGroen", 0);
+        return settings.getInt("prijsLeft", 0);
     }
 
-    public Integer getMulGeel(){
+    public Integer getMulMiddle(){
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        return settings.getInt("prijsGeel", 0);
+        return settings.getInt("prijsMiddle", 0);
     }
 
-    public Integer getMulGrijs(){
+    public Integer getMulRight(){
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        return settings.getInt("prijsGrijs", 0);
+        return settings.getInt("prijsRight", 0);
     }
 }

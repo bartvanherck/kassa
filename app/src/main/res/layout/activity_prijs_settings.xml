@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="be.bartvanherck.kassa.PrijsSettings">
 
     <LinearLayout
@@ -18,22 +19,22 @@
 
             <TextView
                 android:id="@+id/txtSettingsLeft"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="  Prijs Bonnetjes Links"
-                android:textSize="36sp"
+                android:text="Prijs Bonnetjes Links"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editSettingsLeft"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
                 android:text="140"
-                android:textSize="36sp" />
+                android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,8 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="  Prijs Bonnetjes Midden"
-                android:textSize="36sp"
+                android:text="Prijs Bonnetjes Midden"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -57,7 +58,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:text="160"
-                android:textSize="36sp" />
+                android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="  Prijs Bonnetjes Rechts"
-                android:textSize="36sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -81,21 +82,21 @@
                 android:ems="10"
                 android:inputType="number"
                 android:text="220"
-                android:textSize="36sp" />
+                android:textSize="20sp" />
         </LinearLayout>
         <Button
             android:id="@+id/btnPriceSettingsBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="0dp"
             android:onClick="actionPriceSettingsBack"
             android:text="TERUG"
             android:textAlignment="center"
-            android:textSize="75sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
             />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

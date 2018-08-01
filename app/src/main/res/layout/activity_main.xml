@@ -10,146 +10,143 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_weight="1"
+        android:orientation="horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
                 <Button
                     android:id="@+id/UpGroen"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionUpLeft"
                     android:text="+ 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
                 <Button
                     android:id="@+id/downGroen"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionDownLeft"
                     android:text="- 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp" />
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layout_left_result"
                 android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:background="@android:color/holo_green_dark">
                 <TextView
                     android:gravity="center"
                     android:id="@+id/txtLeft"
-                    android:layout_weight="1"
-                    android:layout_width="200sp"
+                    android:layout_weight="3"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:text="00"
-                    android:textSize="80sp"
+                    android:textSize="40sp"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
                 <Button
                     android:id="@+id/upMiddle"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionUpMiddle"
                     android:text="+ 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
                 <Button
                     android:id="@+id/downMiddle"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionDownMiddle"
                     android:text="- 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layout_middle_result"
                 android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:background="@android:color/holo_orange_light">
                 <TextView
                     android:gravity="center"
                     android:id="@+id/txtMiddle"
-                    android:layout_weight="1"
-                    android:layout_width="200sp"
+                    android:layout_weight="3"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:text="00"
-                    android:textSize="80sp"
+                    android:textSize="40sp"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
                 <Button
                     android:id="@+id/upRight"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionUpRight"
                     android:text="+ 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"/>
                 <Button
                     android:id="@+id/downRight"
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="actionDownRight"
                     android:text="- 1"
                     android:textAlignment="center"
-                    android:textSize="75sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layout_right_result"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
@@ -157,13 +154,13 @@
                 <TextView
                     android:gravity="center"
                     android:id="@+id/txtRight"
-                    android:layout_weight="1"
-                    android:layout_width="200sp"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
                     android:text="00"
-                    android:textSize="80sp"
+                    android:textSize="40sp"
                     android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -173,29 +170,21 @@
         android:layout_weight="1"
         android:id="@+id/txtResultaat"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="0 €"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textSize="100sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp" />
+        android:textSize="50sp"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:onClick="actionVolgende"
         android:text="Volgende"
         android:textAlignment="center"
-        android:textSize="75sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="10dp"
         />
 </LinearLayout>

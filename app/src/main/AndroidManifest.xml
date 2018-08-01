@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PrijsSettings" />
-        <activity android:name=".ColorSettings" />
+        <activity android:name=".PrijsSettings" android:screenOrientation="landscape" />
+        <activity android:name=".ColorSettings" android:screenOrientation="landscape" />
     </application>
 
 </manifest>
